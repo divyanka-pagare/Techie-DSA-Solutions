@@ -22,3 +22,10 @@ class Solution {
     }
 }
 
+// Complexity
+
+// Time: O(number of set bits) ≤ O(log n)
+
+// Space: O(1)
+
+
