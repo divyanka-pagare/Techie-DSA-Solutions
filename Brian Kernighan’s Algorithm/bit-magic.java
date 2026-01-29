@@ -1,3 +1,14 @@
+// Expected Complexities
+// Time Complexity: O(log n)
+// Auxiliary Space: O(1)
+
+// Company Tags
+// Microsoft, Samsung, Adobe, Wipro, Brocade, Juniper Networks, Cisco, Qualcomm
+
+// Topic Tags
+// Bit Magic, Data Structures
+
+
 class Solution {
     static int setBits(int n) {
         int count = 0;
@@ -10,3 +21,4 @@ class Solution {
         return count;
     }
 }
+
