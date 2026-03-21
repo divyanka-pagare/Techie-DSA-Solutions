@@ -1,0 +1,17 @@
+1491. Average Salary Excluding the Minimum and Maximum Salary
+
+
+
+class Solution {
+public:
+    double average(vector<int>& salary) {
+        int minSal = *min_element(salary.begin(), salary.end());
+        int maxSal = *max_element(salary.begin(), salary.end());
+        
+        double sum = 0;
+        for (int s : salary) sum += s;
+        
+        return (sum - minSal - maxSal) / (salary.size() - 2);
+    }
+};
+
