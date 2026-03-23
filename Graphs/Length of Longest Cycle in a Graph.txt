@@ -1,0 +1,60 @@
+<pre>
+Day X of DSA – Length of Longest Cycle in a Directed Graph
+
+Today’s problem looked tough at first, but it turned out to be all about pattern recognition 💡
+
+Key Observation ->
+
+Each node has at most one outgoing edge
+👉 This means the graph behaves like a linked list with possible cycles
+
+Initial Approach ->
+
+I first used a HashMap to store the step at which each node was visited during traversal.
+
+If I revisit a node in the same path → cycle found
+Cycle length = current step - first visit step
+
+This worked, but used extra space.
+
+Optimization ->
+
+Then I optimized it by replacing HashMap with:
+
+visited[] → to avoid reprocessing nodes
+time[] → to store visit time
+
+This reduced overhead and made the solution faster.
+
+Bug I Faced ->
+
+My optimized solution failed on some test cases 😓
+
+Problem:
+I was detecting a cycle even when I reached a node visited in a previous traversal, not the current one.
+
+✅ Fix
+
+I added a simple but powerful condition:
+👉 Only count cycle if the node is visited in the current traversal
+
+This was done using a startTime check:
+
+If time[node] >= startTime → valid cycle
+Else → ignore
+
+🧠 Key Learnings
+Always check the type of graph before solving
+If each node has one outgoing edge → think linked list + cycle detection
+Avoid recomputation using visited[]
+Track extra info (like time) only when needed
+Be careful with global vs current traversal state
+Complexity ->
+Time: O(V) → each node is visited once
+Space: O(V) → for visited and time arrays
+
+💡 Takeaway
+
+👉 “In graph problems, the real trick is not coding, but identifying the pattern correctly.”
+</pre>
+#DSA #Graphs #ProblemSolving #CodingJourney #Java
