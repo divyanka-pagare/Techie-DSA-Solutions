@@ -1,0 +1,42 @@
+1122. Relative Sort Array
+
+
+
+class Solution {
+public:
+    vector<int> relativeSortArray(vector<int>& arr1, vector<int>& arr2) {
+        unordered_map<int, int> freq;
+
+        // Step 1: Count frequency of elements in arr1
+        for (int num : arr1) {
+            freq[num]++;
+        }
+
+        vector<int> result;
+
+        // Step 2: Add elements in order of arr2
+        for (int num : arr2) {
+            while (freq[num] > 0) {
+                result.push_back(num);
+                freq[num]--;
+            }
+        }
+
+        // Step 3: Store remaining elements
+        vector<int> remaining;
+        for (auto &it : freq) {
+            while (it.second > 0) {
+                remaining.push_back(it.first);
+                it.second--;
+            }
+        }
+
+        // Step 4: Sort remaining elements
+        sort(remaining.begin(), remaining.end());
+
+        // Step 5: Append remaining to result
+        result.insert(result.end(), remaining.begin(), remaining.end());
+
+        return result;
+    }
+};
