@@ -1,0 +1,23 @@
+905. Sort Array By Parity
+
+
+
+
+class Solution {
+public:
+    vector<int> sortArrayByParity(vector<int>& nums) {
+        vector<int> even, odd;
+        
+        for(int num : nums) {
+            if(num % 2 == 0) {
+                even.push_back(num);
+            } else {
+                odd.push_back(num);
+            }
+        }
+        
+        // Combine even + odd
+        even.insert(even.end(), odd.begin(), odd.end());
+        return even;
+    }
+};
