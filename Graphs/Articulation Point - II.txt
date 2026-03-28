@@ -1,0 +1,121 @@
+📝 Articulation Point (Cut Vertex) – Quick Revision
+
+👉 An articulation point is a node which, if removed, increases the number of connected components in the graph.
+
+💡 Idea (DFS Based)
+
+Instead of removing nodes, we use DFS and track:
+
+tin[node] → time when node is visited
+low[node] → lowest reachable time (including back edges)
+⚡ Condition
+
+👉 A node u is an articulation point if:
+
+low[v] >= tin[u]
+
+Where v is a child of u
+
+✔ Means: child cannot reach any ancestor of u
+→ removing u disconnects the graph
+
+🌳 Special Case (Root Node)
+
+👉 Root is an articulation point if:
+
+it has more than 1 child
+⏱ Complexity
+Time: O(V + E)
+Space: O(V)
+🎯 One-Line Intuition
+
+👉 If a node is the only way to reach a part of the graph, it's an articulation point.
+
+_____________________________________________________________________________________________
+
+🔁 Articulation Point – Quick Recall
+Start with DFS traversal (handle disconnected graph also)
+Maintain 3 arrays → vis[], tin[], low[]
+Initialize a timer to assign tin[]
+Always pass parent in DFS
+If neighbour is not visited → DFS call
+After return → update
+👉 low[node] = min(low[node], low[child])
+If neighbour is already visited & not parent
+👉 it's a back edge
+👉 low[node] = min(low[node], tin[neigh])
+🔴 Main condition
+👉 If low[child] >= tin[node] and node is NOT root
+→ mark as articulation point
+🌳 Root condition
+👉 If root has more than 1 child → articulation point
+Use boolean array to avoid duplicates
+Final check:
+👉 If no articulation point → return -1
+
+__________________________________________________________________________________________________
+
+Here’s a quick dry run you can revise anytime 👇
+
+🧪 Example
+V = 5
+Edges = [[0-1], [1-4], [4-3], [4-2], [2-3]]
+
+Graph looks like:
+
+0 — 1 — 4
+         / \
+        3 — 2
+🚀 DFS Start from 0
+timer = 0
+Node	tin	low
+0	0	0
+1	1	1
+4	2	2
+3	3	3
+2	4	4
+🔙 Backtracking (Important Part)
+At node 2:
+Back edge to 4
+👉 low[2] = min(4, 2) = 2
+At node 3:
+
+👉 low[3] = min(3, low[2]=2) = 2
+
+At node 4:
+
+👉 low[4] = min(2, low[3]=2) = 2
+
+👉 Check:
+
+low[3] >= tin[4]
+2 >= 2 ✅
+
+✔ 4 is articulation point
+
+At node 1:
+
+👉 low[1] = min(1, low[4]=2) = 1
+
+👉 Check:
+
+low[4] >= tin[1]
+2 >= 1 ✅
+
+✔ 1 is articulation point
+
+At node 0:
+Only 1 child
+❌ Not articulation point
+✅ Final Answer
+[1, 4]
+🎯 What to observe (VERY IMPORTANT)
+Back edge reduces low[]
+No back edge → articulation point
+Compare:
+👉 low[child] vs tin[node]
+🧠 One-line memory
+
+👉 If child cannot go above parent → parent is articulation point
+
+Keep this + bullets together = full clarity 🔥
