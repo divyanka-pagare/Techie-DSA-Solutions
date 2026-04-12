@@ -21,6 +21,7 @@
 ## [Recursion](https://github.com/divyanka-pagare/Techie-DSA-Solutions/tree/main/recursion)
 ## [Binary Tree](https://github.com/divyanka-pagare/Techie-DSA-Solutions/tree/main/binary%20tree)
 ## [Greedy Algo](https://github.com/divyanka-pagare/Techie-DSA-Solutions/tree/main/Greedy%20Algo)
+## [DP](https://github.com/divyanka-pagare/Techie-DSA-Solutions/tree/main/DP)
 ## [Brian Kernighan’s Algorithm](https://github.com/divyanka-pagare/Techie-DSA-Solutions/tree/main/Brian%20Kernighan%E2%80%99s%20Algorithm)
 
 
