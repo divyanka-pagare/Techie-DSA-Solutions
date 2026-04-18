@@ -2,11 +2,13 @@
 
 ## Data Structures
 
+## [Math](https://github.com/divyanka-pagare/Techie-DSA-Solutions/tree/main/Math)
 ## [Array](https://github.com/divyanka-pagare/Techie-DSA-Solutions/tree/main/array)
 ## [2D Array](https://github.com/divyanka-pagare/Techie-DSA-Solutions/tree/main/2D%20array)
 ## [String](https://github.com/divyanka-pagare/Techie-DSA-Solutions/tree/main/string)
 ## [Linkedlist](https://github.com/divyanka-pagare/Techie-DSA-Solutions/tree/main/linkedlist)
 ## [HashMap](https://github.com/divyanka-pagare/Techie-DSA-Solutions/tree/main/HashMap)
+## [Heap](https://github.com/divyanka-pagare/Techie-DSA-Solutions/tree/main/Heap)
 ## [Tree](https://github.com/divyanka-pagare/Techie-DSA-Solutions/tree/main/Tree)
 - [Closest in BST](https://github.com/divyanka-pagare/Techie-DSA-Solutions/blob/main/Tree/Closest%20in%20BST.java)
 - [Longest BST](https://github.com/divyanka-pagare/Techie-DSA-Solutions/blob/main/Tree/Largest%20BST.java)
