@@ -1,0 +1,44 @@
+394. Decode String
+
+
+class Solution {
+public:
+    string decodeString(string s) {
+        stack<string> strStack;
+        stack<int> numStack;
+
+        string currentStr = "";
+        int num = 0;
+
+        for (char c : s) {
+            if (isdigit(c)) {
+                num = num * 10 + (c - '0');
+            }
+            else if (c == '[') {
+                // store previous state
+                strStack.push(currentStr);
+                numStack.push(num);
+
+                // reset for new segment
+                currentStr = "";
+                num = 0;
+            }
+            else if (c == ']') {
+                int repeat = numStack.top(); numStack.pop();
+                string prevStr = strStack.top(); strStack.pop();
+
+                string decoded = "";
+                for (int i = 0; i < repeat; i++) {
+                    decoded += currentStr;
+                }
+
+                currentStr = prevStr + decoded;
+            }
+            else {
+                currentStr += c;
+            }
+        }
+
+        return currentStr;
+    }
+};
